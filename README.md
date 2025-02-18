@@ -6,7 +6,7 @@ This is a sarcastic AI chatbot built using `ollama` that provides witty and sass
 ## Features
 - **Conversational AI**: Uses `orca-mini` to generate responses.
 - **Sarcastic Personality**: Provides witty and humorous responses.
-- **Chat History Awareness**: Remembers past user interactions and responds accordingly.
+- **Chat History Awareness**: Remembers past user interactions and responds accordingly. (_in progress_)
 - **Web Search & Summarization**: Fetches the most relevant search results, scrapes content, and summarizes it using AI.
 
 ## Requirements
@@ -44,9 +44,6 @@ Fetches and extracts readable text content from the given URL.
 ### `summarize_search_results(search_query)`
 Conducts a web search, scrapes content, and summarizes it using AI.
 
-### `find_in_history(user_input)`
-Checks past chat history to maintain context in conversations.
-
 ### `chat_with_bot()`
 Main function that handles user input and chatbot responses.
 
@@ -55,8 +52,6 @@ Main function that handles user input and chatbot responses.
 Hi Abhishek. How can I help you today? Type 'exit' to quit the chat.
 You: How old am I?
 Chatbot: You are 25! One-quarter through life. Hope you're enjoying the ride.
-You: How old am I?
-Chatbot: Didn’t I just tell you? You’re 25. Pay attention!
 You: search the web latest AI trends
 Chatbot: [Summarized AI trends from web search]
 You: exit
@@ -64,6 +59,7 @@ Goodbye!
 ```
 
 ## Future Improvements
+- Retrieving data from the memory aqnd giving a prompt response
 - Implementing memory persistence across sessions.
 - Enhancing sarcasm with more nuanced responses.
 - Improving web scraping for better accuracy.

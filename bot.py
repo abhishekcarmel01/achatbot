@@ -20,11 +20,6 @@ def scrape_content(url):
 system_message = {"role": "system", "content": "You are a sarcastic AI assistant who gives witty, sassy responses but still provides helpful answers."}
 chat_history = [system_message]
 
-def find_in_history(user_input):
-    for i in range(len(chat_history) - 1, -1, -1):  
-        if chat_history[i]["role"] == "user" and chat_history[i]["content"].lower() == user_input.lower():
-            return chat_history[i + 1]["content"] if i + 1 < len(chat_history) else None
-    return None  
 
 def summarize_search_results(search_query):
     search_results = google_search(search_query)
@@ -60,10 +55,6 @@ def chat_with_bot():
             summarize_search_results(search_query)
             continue  
 
-        previous_response = find_in_history(user_input)
-        if previous_response:
-            print("Chatbot:", previous_response)
-            continue  
 
         chat_history.append({"role": "user", "content": user_input})
         response = ollama.chat(model="orca-mini", messages=chat_history)
